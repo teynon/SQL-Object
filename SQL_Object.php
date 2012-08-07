@@ -32,15 +32,19 @@ if (!class_exists("SQL_Object")) {
             $this->sql = "";
             $this->pointer = 0;
             $this->size = 0;
+        }
+        
+        // Run a custom query.
+        function SQL_Object($sql = "", $autoRun = true) {
+            $this->data = array();
+            $this->object = array();
+            $this->sql = "";
+            $this->pointer = 0;
+            $this->size = 0;
             
             if (!empty($sql)) {
                 $this->run($sql, $autoRun);
             }
-        }
-        
-        // Run a custom query.
-        function SQL_Data($sql, $autoRun = true) {
-            $this->run($sql, $autoRun);
         }
         
         
